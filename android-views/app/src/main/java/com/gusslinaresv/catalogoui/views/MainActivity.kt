@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
             CatalogSection.ACTIONS -> ActionsFragment()
             CatalogSection.SELECTION -> SelectionFragment()
             CatalogSection.LISTS -> CollectionsFragment()
+            CatalogSection.FEEDBACK -> FeedbackFragment()
+            CatalogSection.LAYOUT -> LayoutFragment()
             else -> PlaceholderFragment.newInstance(section)
         }
         supportFragmentManager.beginTransaction()
