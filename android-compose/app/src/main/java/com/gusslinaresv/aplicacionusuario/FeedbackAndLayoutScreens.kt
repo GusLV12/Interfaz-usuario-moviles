@@ -63,7 +63,7 @@ fun FeedbackScreen() {
             Text("Nota secundaria", style = MaterialTheme.typography.labelMedium)
         }
         CatalogCard("Imágenes", "Se muestran una imagen del proyecto y otra cargada mediante URL, con escalado distinto.") {
-            Image(painterResource(R.drawable.ic_launcher_foreground), "Imagen local", Modifier.size(96.dp).clip(MaterialTheme.shapes.medium), contentScale = ContentScale.Crop)
+            Image(painterResource(R.drawable.catalog_local_image), "Imagen local", Modifier.size(96.dp).clip(MaterialTheme.shapes.medium), contentScale = ContentScale.Crop)
             AsyncImage("https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=640&q=80", "Imagen remota", Modifier.fillMaxWidth().height(150.dp).clip(MaterialTheme.shapes.medium), contentScale = ContentScale.Crop)
         }
         CatalogCard("Indicadores de progreso", "Comunican avance conocido o actividad cuya duración no se puede calcular.") {
