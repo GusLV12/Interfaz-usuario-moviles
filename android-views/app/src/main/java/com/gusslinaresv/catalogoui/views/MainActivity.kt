@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener { showSection(CatalogSection.HOME) }
         val fragment: Fragment = when (section) {
             CatalogSection.HOME -> HomeFragment()
+            CatalogSection.TEXT -> TextInputsFragment()
+            CatalogSection.ACTIONS -> ActionsFragment()
             else -> PlaceholderFragment.newInstance(section)
         }
         supportFragmentManager.beginTransaction()
