@@ -76,7 +76,13 @@ fun CatalogApp(viewModel: CatalogViewModel = viewModel()) {
         NavHost(navController, "inicio", Modifier.padding(padding)) {
             composable("inicio") { HomeScreen(navController) }
             CatalogSection.entries.forEach { section ->
-                composable(section.route) { PlaceholderSection(section) }
+                composable(section.route) {
+                    when (section) {
+                        CatalogSection.TEXT -> TextInputsScreen(viewModel)
+                        CatalogSection.ACTIONS -> ActionsScreen()
+                        else -> PlaceholderSection(section)
+                    }
+                }
             }
         }
     }
