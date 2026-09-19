@@ -82,6 +82,8 @@ fun CatalogApp(viewModel: CatalogViewModel = viewModel()) {
                         CatalogSection.ACTIONS -> ActionsScreen()
                         CatalogSection.SELECTION -> SelectionScreen()
                         CatalogSection.LISTS -> CollectionsScreen(viewModel)
+                        CatalogSection.FEEDBACK -> FeedbackScreen()
+                        CatalogSection.LAYOUT -> LayoutScreen()
                         else -> PlaceholderSection(section)
                     }
                 }
