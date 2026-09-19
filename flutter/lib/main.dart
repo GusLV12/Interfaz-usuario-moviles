@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'catalog_scope.dart';
 import 'catalog_section.dart';
 import 'catalog_store.dart';
+import 'feedback_layout_screens.dart';
 import 'home_screen.dart';
-import 'section_placeholder.dart';
 import 'selection_collections_screens.dart';
 import 'text_actions_screens.dart';
 
@@ -66,7 +66,8 @@ class _CatalogAppState extends State<CatalogApp> {
             CatalogSection.actions => const ActionsScreen(),
             CatalogSection.selection => const SelectionScreen(),
             CatalogSection.collections => const CollectionsScreen(),
-            _ => SectionPlaceholder(section: _section),
+            CatalogSection.feedback => const FeedbackScreen(),
+            CatalogSection.layout => const LayoutScreen(),
           },
           bottomNavigationBar: NavigationBar(
             selectedIndex: _bottomIndex,
