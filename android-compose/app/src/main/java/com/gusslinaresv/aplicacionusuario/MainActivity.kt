@@ -80,6 +80,8 @@ fun CatalogApp(viewModel: CatalogViewModel = viewModel()) {
                     when (section) {
                         CatalogSection.TEXT -> TextInputsScreen(viewModel)
                         CatalogSection.ACTIONS -> ActionsScreen()
+                        CatalogSection.SELECTION -> SelectionScreen()
+                        CatalogSection.LISTS -> CollectionsScreen(viewModel)
                         else -> PlaceholderSection(section)
                     }
                 }

@@ -29,6 +29,12 @@ class CatalogViewModel : ViewModel() {
         }
         return true
     }
+
+    fun removeItem(id: Int) = _uiState.update { state -> state.copy(items = state.items.filterNot { it.id == id }) }
+
+    fun clearItems() = _uiState.update { it.copy(items = emptyList()) }
+
+    fun resetItems() = _uiState.update { it.copy(items = defaultItems()) }
 }
 
 fun defaultItems() = List(15) { index ->
