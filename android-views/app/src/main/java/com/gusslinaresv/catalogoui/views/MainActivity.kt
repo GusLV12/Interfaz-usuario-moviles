@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.menu_text -> CatalogSection.TEXT
                     R.id.menu_selection -> CatalogSection.SELECTION
                     R.id.menu_lists -> CatalogSection.LISTS
+                    R.id.menu_feedback -> CatalogSection.FEEDBACK
                     else -> CatalogSection.HOME
                 }
             )
@@ -28,8 +29,14 @@ class MainActivity : AppCompatActivity() {
 
     fun showSection(section: CatalogSection) {
         binding.toolbar.title = section.title
+        binding.toolbar.navigationIcon = if (section == CatalogSection.HOME) null else getDrawable(android.R.drawable.ic_menu_revert)
+        binding.toolbar.setNavigationOnClickListener { showSection(CatalogSection.HOME) }
+        val fragment: Fragment = when (section) {
+            CatalogSection.HOME -> HomeFragment()
+            else -> PlaceholderFragment.newInstance(section)
+        }
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, PlaceholderFragment.newInstance(section))
+            .replace(R.id.fragment_container, fragment)
             .commit()
     }
 }

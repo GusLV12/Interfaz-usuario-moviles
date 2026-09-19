@@ -3,4 +3,5 @@
     <item android:id="@+id/menu_text" android:icon="@android:drawable/ic_menu_edit" android:title="Entrada" />
     <item android:id="@+id/menu_selection" android:icon="@android:drawable/ic_menu_manage" android:title="Selección" />
     <item android:id="@+id/menu_lists" android:icon="@android:drawable/ic_menu_agenda" android:title="Listas" />
+    <item android:id="@+id/menu_feedback" android:icon="@android:drawable/ic_dialog_info" android:title="Información" />
 </menu>
