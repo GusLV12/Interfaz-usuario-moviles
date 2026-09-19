@@ -5,6 +5,7 @@ import 'catalog_section.dart';
 import 'catalog_store.dart';
 import 'home_screen.dart';
 import 'section_placeholder.dart';
+import 'text_actions_screens.dart';
 
 void main() => runApp(const CatalogApp());
 
@@ -58,9 +59,12 @@ class _CatalogAppState extends State<CatalogApp> {
                     onPressed: () => _showSection(CatalogSection.home),
                   ),
           ),
-          body: _section == CatalogSection.home
-              ? HomeScreen(onSelect: _showSection)
-              : SectionPlaceholder(section: _section),
+          body: switch (_section) {
+            CatalogSection.home => HomeScreen(onSelect: _showSection),
+            CatalogSection.text => const TextInputsScreen(),
+            CatalogSection.actions => const ActionsScreen(),
+            _ => SectionPlaceholder(section: _section),
+          },
           bottomNavigationBar: NavigationBar(
             selectedIndex: _bottomIndex,
             onDestinationSelected: (index) =>
