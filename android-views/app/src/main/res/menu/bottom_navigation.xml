@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_home" android:icon="@android:drawable/ic_menu_view" android:title="Inicio" />
+    <item android:id="@+id/menu_text" android:icon="@android:drawable/ic_menu_edit" android:title="Entrada" />
+    <item android:id="@+id/menu_selection" android:icon="@android:drawable/ic_menu_manage" android:title="Selección" />
+    <item android:id="@+id/menu_lists" android:icon="@android:drawable/ic_menu_agenda" android:title="Listas" />
+</menu>
