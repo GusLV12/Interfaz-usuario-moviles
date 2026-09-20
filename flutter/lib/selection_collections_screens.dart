@@ -91,11 +91,15 @@ class _SelectionScreenState extends State<SelectionScreen> {
               Text('Valor: ${_value.round()}'),
               Slider(
                 value: _value,
+                min: 0,
+                max: 100,
                 onChanged: (value) => setState(() => _value = value),
               ),
               Text('Rango: ${_range.start.round()} a ${_range.end.round()}'),
               RangeSlider(
                 values: _range,
+                min: 0,
+                max: 100,
                 onChanged: (value) => setState(() => _range = value),
               ),
             ],

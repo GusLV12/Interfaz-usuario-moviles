@@ -58,4 +58,21 @@ void main() {
     );
     expect(find.text('Elemento de prueba'), findsOneWidget);
   });
+
+  testWidgets('Selección muestra deslizadores con valores de 0 a 100', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(const CatalogApp());
+
+    await tester.tap(find.text('Selección'));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.text('Deslizadores'),
+      250,
+      scrollable: find.byType(Scrollable).first,
+    );
+
+    expect(find.text('Valor: 45'), findsOneWidget);
+    expect(find.text('Rango: 25 a 75'), findsOneWidget);
+  });
 }
