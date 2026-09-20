@@ -1,6 +1,6 @@
 # Instrucciones de compilación y ejecución
 
-Este documento reúne los pasos para ejecutar las tres versiones Android del Catálogo UI. El README principal se completará al integrar la tabla comparativa, las capturas y los datos de identificación de la entrega.
+Este documento reúne los pasos para ejecutar las tres versiones Android del Catálogo UI.
 
 ## Requisitos
 
@@ -77,4 +77,4 @@ En cada versión se debe comprobar lo siguiente antes de tomar capturas:
 - Diálogo, hoja inferior, imágenes y barras de progreso se muestran en Información.
 - La aplicación se adapta al tema claro u oscuro configurado en el sistema.
 
-Las capturas para la entrega se guardarán en `docs/` cuando se documenten las tres implementaciones.
+Las capturas de la entrega se almacenan en `docs/`.
