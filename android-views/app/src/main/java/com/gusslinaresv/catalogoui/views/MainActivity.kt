@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
             CatalogSection.LISTS -> CollectionsFragment()
             CatalogSection.FEEDBACK -> FeedbackFragment()
             CatalogSection.LAYOUT -> LayoutFragment()
-            else -> PlaceholderFragment.newInstance(section)
         }
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
@@ -55,19 +54,4 @@ enum class CatalogSection(val title: String, val description: String) {
     LISTS("Listas y colecciones", "Listas, cuadrículas, gestos y pestañas."),
     FEEDBACK("Información y retroalimentación", "Mensajes, progreso, imágenes y diálogos."),
     LAYOUT("Contenedores y estructura", "Filas, columnas, superposiciones y navegación.")
-}
-
-class PlaceholderFragment : Fragment(R.layout.fragment_placeholder) {
-    override fun onViewCreated(view: android.view.View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val section = CatalogSection.valueOf(requireArguments().getString("section")!!)
-        view.findViewById<android.widget.TextView>(R.id.section_title).text = section.title
-        view.findViewById<android.widget.TextView>(R.id.section_description).text = section.description
-    }
-
-    companion object {
-        fun newInstance(section: CatalogSection) = PlaceholderFragment().apply {
-            arguments = Bundle().apply { putString("section", section.name) }
-        }
-    }
 }
